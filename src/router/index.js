@@ -1,29 +1,58 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import Login from "../views/Login.vue";
+import AuthGuard from "../router/AuthGuard.js";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+
+const Register = (resolve) => {
+  require.ensure(
+    ["../views/Register.vue"],
+    () => {
+      resolve(require("../views/Register.vue"));
+    },
+    "user" // [[ 16 - 26 @06:00 ]] we can also group them into one bundle by having the argv2 like this 'user' group bundle
+  );
+};
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
+    exact: true,
+    beforeEnter: AuthGuard,
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
+  },
+  {
+    path: "/verify",
+    name: "Verify",
+  },
+  {
+    path: "/about",
+    name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

@@ -1,32 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="accent"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1"
+          contain
+          min-width="100"
+          src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
+          width="100"
+        />
+        <span class="text-h5 shrink mt-1 hidden-sm-and-down">
+          Appetiser
+        </span>
+      </div>
+      <v-spacer></v-spacer>
+
+    </v-app-bar>
+
+    <router-view></router-view>
+  </v-app>
 </template>
 
+<script>
+
+export default {
+  name: 'App',
+
+  components: {
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.bordered {
+  border: 5px solid yellow
 }
 </style>
