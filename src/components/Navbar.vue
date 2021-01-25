@@ -4,19 +4,23 @@
       color="accent"
       dark
     >
-      <div class="d-flex align-center logo-container" @click="$router.go('/')" >
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1"
-          contain
-          min-width="100"
-          src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
-          width="100"
-        />
-        <span class="text-h5 shrink mt-1 hidden-sm-and-down">
-          Appetiser
-        </span>
-      </div>
+      <!-- <div class="d-flex align-center logo-container" @click="$router.push('/')" > -->
+        <router-link to="/" tag="div">
+          <div class="d-flex align-center logo-container">
+              <v-img
+              alt="Vuetify Name"
+              class="shrink mt-1"
+              contain
+              min-width="100"
+              src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
+              width="100"
+            />
+            <span class="text-h5 shrink mt-1 hidden-sm-and-down">
+              Appetiser
+            </span>
+          </div>
+        </router-link>
+      <!-- </div> -->
       <v-spacer></v-spacer>
       <!-- HORIZONTAL MAIN LINKS RIGHT SIDE -->
 

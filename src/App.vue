@@ -16,23 +16,6 @@ export default {
   components: {
     'nav-bar': Navbar
   },
-
-  data() {
-    return {
-
-    };
-  },
-
-  created() {
-    // test for vue-cookies
-    this.$cookies.set('test', 'asdfadsf', 20)
-
-
-    console.log('cookies get', this.$cookies.get('test'))
-
-    console.log('cookies get from App', this.$cookies.keys())
-  },
-
 }
 </script>
 
