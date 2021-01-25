@@ -1,4 +1,9 @@
-# appetiser
+# pokedex
+
+### Follow Below instructions for building this projec on Local Server
+
+To see output without building on local pls. visit GitHub Page:
+### https://omerson-cruz.github.io/appetiser-signin-signup/
 
 ## Project setup
 ```
@@ -20,5 +25,10 @@ npm run build
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Lints and fixes files
+```
+npm run lint
+```
+
+
+
