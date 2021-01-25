@@ -1,47 +1,46 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="accent"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1"
-          contain
-          min-width="100"
-          src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
-          width="100"
-        />
-        <span class="text-h5 shrink mt-1 hidden-sm-and-down">
-          Appetiser
-        </span>
-      </div>
-      <v-spacer></v-spacer>
-
-    </v-app-bar>
+    <nav-bar></nav-bar>
 
     <router-view></router-view>
   </v-app>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import Navbar from "./components/Navbar"
 
 export default {
   name: 'App',
 
   components: {
+    'nav-bar': Navbar
   },
 
-  data: () => ({
-    //
-  }),
-};
+  data() {
+    return {
+
+    };
+  },
+
+  created() {
+    // test for vue-cookies
+    this.$cookies.set('test', 'asdfadsf', 20)
+
+
+    console.log('cookies get', this.$cookies.get('test'))
+
+    console.log('cookies get from App', this.$cookies.keys())
+  },
+
+}
 </script>
 
 <style lang="scss">
 .bordered {
   border: 5px solid yellow
 }
+
+
+
 </style>

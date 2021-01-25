@@ -10,39 +10,32 @@
           <v-col
             sm="6"
           >
-            <div class="mt-10">
+          <div class="mt-5">
             <v-card
             elevation="2"
             shaped
             min-height="300px"
             style="position: relative"
+            class="pt-10"
             >
-                <div>
-                <v-row class="flex flex-row
-                    align-center
-                    justify-center
-                    align-sm-center
-                    ">
-                  <v-col sm="6">
-                  <v-list-item two-line>
-                    <v-list-item-avatar>
-                      <v-img
-                      alt="Vuetify Name"
-                      contain
-                      min-width="100"
-                      src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
-                      width="100"
-                      />
-                    </v-list-item-avatar>
 
-                    <v-list-item-content>
-                      <v-list-item-title class="text-h6">Appetiser Sign Up</v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item>
-                  </v-col>
-              </v-row>
-              </div>
-
+          <div class="d-flex mx-0 justify-center align-center mb-9">
+            <div>
+                <div class="d-flex">
+                <v-img
+                  class="ml-n8"
+                  alt="Vuetify Name"
+                  contain
+                  min-width="50"
+                  src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
+                  width="90"
+                  />
+                <div class="d-flex align-center justify-center ml-n3">
+                  <span class="text-h6 ">Appetiser Sign In</span>
+                </div>
+            </div>
+            </div>
+          </div>
 
 
             <!-- LOGIN FORM -->
@@ -139,6 +132,15 @@ export default {
       ],
     };
   },
+  methods: {
+    handleSignInUser() {
+      const payload = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch('signInUser', payload)
+    }
+  }
 }
 </script>
 

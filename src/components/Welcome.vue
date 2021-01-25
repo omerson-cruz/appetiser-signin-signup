@@ -2,7 +2,7 @@
 
       <v-container>
           <v-row
-            class="flex flex-row
+            class="flex-row
             align-center
             justify-center
             align-sm-center

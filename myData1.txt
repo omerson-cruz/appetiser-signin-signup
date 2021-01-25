@@ -1,0 +1,24 @@
+data:
+    data:
+        email: "omerson.e.cruz@gmail.com"
+        access_token: "2419|rUsyAr5fRRtOAidnLCa9fvVJutNzy7KBsCMXEln0"
+               "Bearer 2419|rUsyAr5fRRtOAidnLCa9fvVJutNzy7KBsCMXEln0"
+        expires_in: "2021-01-23T05:35:09.942717Z"
+        token_type: "bearer"
+        user:
+        avatar_permanent_thumb_url: "https://api.baseplate.appetiserdev.tech/api/v1/users/773/avatar/thumb"
+        avatar_permanent_url: "https://api.baseplate.appetiserdev.tech/api/v1/users/773/avatar"
+        birthdate: null
+        blocked_at: null
+        created_at: "2021-01-23T05:34:09.000000Z"
+        description: null
+        email: "omerson.e.cruz@gmail.com"
+        email_verified: false
+        full_name: "Omerson Cruz"
+        gender: null
+        id: 773
+        mine: false
+        phone_number: null
+        phone_number_verified: false
+        updated_at: "2021-01-23T05:34:09.000000Z"
+        verified: false

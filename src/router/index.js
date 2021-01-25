@@ -32,11 +32,16 @@ const routes = [
   {
     path: "/register",
     name: "Register",
-    component: Register,
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Register.vue"),
+    beforeEnter: AuthGuard,
   },
   {
     path: "/verify",
     name: "Verify",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Verify.vue"),
+    beforeEnter: AuthGuard,
   },
   {
     path: "/about",

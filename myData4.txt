@@ -1,0 +1,22 @@
+data:
+    data:
+        access_token: "2437|KSdeArYxni46qTHSkqjNMIMG8WSz3POKSIsFdiDc"
+        expires_in: "2021-01-25T14:19:27.831951Z"
+        token_type: "bearer"
+        user:
+            avatar_permanent_thumb_url: "https://api.baseplate.appetiserdev.tech/api/v1/users/776/avatar/thumb"
+            avatar_permanent_url: "https://api.baseplate.appetiserdev.tech/api/v1/users/776/avatar"
+            birthdate: null
+            blocked_at: null
+            created_at: "2021-01-25T14:18:27.000000Z"
+            description: null
+            email: "nsnl.omerson.cruz@gmail.com"
+            email_verified: false
+            full_name: "Omerson Cruz"
+            gender: null
+            id: 776
+            mine: false
+            phone_number: null
+            phone_number_verified: false
+            updated_at: "2021-01-25T14:18:27.000000Z"
+            verified: false

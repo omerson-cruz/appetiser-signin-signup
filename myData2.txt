@@ -1,0 +1,23 @@
+
+avatar_permanent_thumb_url: "https://api.baseplate.appetiserdev.tech/api/v1/users/774/avatar/thumb"
+avatar_permanent_url: "https://api.baseplate.appetiserdev.tech/api/v1/users/774/avatar"
+birthdate: null
+blocked_at: null
+created_at: "2021-01-23T05:45:25.000000Z"
+description: null
+email: "omerson.cruz205309@gmail.com"
+email_verified: false
+full_name: "Omerson Cruz"
+gender: null
+id: 774
+mine: false
+phone_number: null
+phone_number_verified: false
+updated_at: "2021-01-23T05:45:25.000000Z"
+verified: false
+__proto__: Object
+
+
+expires in:  Sat Jan 23 2021 13:46:25 GMT+0800 (Philippine Standard Time)
+index.js:143 access token  2420|pxPqBWkrC0DvvaELAhbqSBU8CR7iffK29oNnj872
+index.js:144 token_type bearer
