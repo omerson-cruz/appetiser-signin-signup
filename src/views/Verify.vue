@@ -46,14 +46,14 @@
                     >
                     <span class="text-caption">
                         <h3>
-                            Please check the verification code sent to your email
+                            Account not yet verified. Please check your email for verification code.
                         </h3>
                     </span>
                     </v-alert>
               </v-col>
           </v-row>
         <!-- ERROR MESSAGE -->
-            <v-row class="flex-row justify-center flex-wrap mx-0 pa-5">
+            <v-row class="flex-row justify-center flex-wrap mx-0 pa-4">
               <v-alert
                 toggle=""
                 border="right"

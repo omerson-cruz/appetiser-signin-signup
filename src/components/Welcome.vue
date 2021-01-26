@@ -28,7 +28,7 @@
                         src="https://jobio-prd-s3.s3-ap-southeast-1.amazonaws.com/poster-photo/26522-29287-prd.png"
                         width="120"
                         /></span>
-                    <span class="welcome-content text-h4" >Welcome to Appetiser Web App!</span>
+                    <span class="welcome-content text-h4" >Welcome {{user.full_name}} to Appetiser Web App!</span>
                 </v-card>
               </div>
               </v-col>
@@ -38,12 +38,17 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
 
 export default {
   name: 'Welcome',
-  components: {
 
+  computed: {
+    ...mapGetters([
+      'user'
+    ])
   }
+
 }
 </script>
 

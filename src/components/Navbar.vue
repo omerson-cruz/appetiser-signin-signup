@@ -47,7 +47,7 @@
               depressed
               elevation="0"
               v-if="user"
-              color="primary"
+              color="accent"
               @click="handleSignOutUser"
             >
               <v-icon

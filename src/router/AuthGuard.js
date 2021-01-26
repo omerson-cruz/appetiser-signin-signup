@@ -6,6 +6,14 @@ export default (to, from, next) => {
     next({
       path: "/login",
     });
+  } else if (
+    to.path === "/" &&
+    store.getters.user &&
+    !store.getters.user.email_verified
+  ) {
+    next({
+      path: "/verify",
+    });
   } else if (to.path === "/verify" && !store.getters.user) {
     next({
       path: "/login",

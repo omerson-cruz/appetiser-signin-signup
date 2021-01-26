@@ -12,6 +12,7 @@ import {
 import cookies from "vue-cookies";
 import router from "../router/index";
 import createPersistedState from "vuex-persistedstate";
+import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -143,6 +144,8 @@ export default new Vuex.Store({
 
         // stop loading state
         commit("setLoading", false);
+
+        dispatch("sendVerification", user);
         router.push("/verify");
       } catch (error) {
         commit("setLoading", false);
@@ -153,12 +156,35 @@ export default new Vuex.Store({
       }
     },
 
+    async sendVerification({ commit, dispatch }, payload) {
+      const { email } = payload;
+
+      const localBackend = "http://localhost:3000";
+
+      console.log("sendVerification email: ", email);
+
+      try {
+        const res = await axios.post(localBackend + "/emailVerify", {
+          email,
+          via: "email",
+        });
+
+        console.log(" send Verification response: ", res);
+
+        return;
+      } catch (error) {
+        console.log("error: ", error);
+      }
+    },
+
     async verify({ commit }, payload) {
       console.log("verify payload: ", payload);
 
       try {
         // REGISTER API
-        const res = await verifyApi.post(
+        const {
+          data: { data: user, http_status },
+        } = await verifyApi.post(
           "",
           {
             token: payload,
@@ -171,13 +197,20 @@ export default new Vuex.Store({
           }
         );
 
+        console.log("user: ", user);
+        console.log("http_status: ", user, http_status);
+
+        if (http_status === 200) {
+          commit("setUser", user);
+        }
+
         // const {
         //   data: {
         //     data: { access_token, token_type, expires_in, user },
         //   },
         // } = res;
 
-        // router.push("/");
+        router.push("/");
       } catch (error) {
         commit("setLoading", false);
         if (error.response !== undefined) {
@@ -188,27 +221,29 @@ export default new Vuex.Store({
       }
     },
 
-    async resendVerification({ commit }) {
+    async resendVerification({ commit, dispatch, state: { user } }) {
       try {
         // RESEND VERIFICATION API
-        const res = await reverifyApi.post(
-          "",
-          {
-            via: "email",
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
-          }
-        );
-        console.log("response data", res);
-        const {
-          data: {
-            data: { access_token, token_type, expires_in, user },
-          },
-        } = res;
+        // const res = await reverifyApi.post(
+        //   "",
+        //   {
+        //     via: "email",
+        //   },
+        //   {
+        //     headers: {
+        //       Authorization: "Bearer " + localStorage.getItem("token"),
+        //     },
+        //   }
+        // );
+        // console.log("response data", res);
+        // const {
+        //   data: {
+        //     data: { access_token, token_type, expires_in, user },
+        //   },
+        // } = res;
         // router.push("/");
+
+        dispatch("sendVerification", user);
       } catch (error) {
         commit("setLoading", false);
         if (error.response !== undefined) {
@@ -254,7 +289,7 @@ export default new Vuex.Store({
 
       localStorage.clear();
 
-      router.go(); // will refresh the page and avoid redundant route to homepage
+      router.go("/"); // will refresh the page and avoid redundant route to homepage
     },
   },
   getters: {
